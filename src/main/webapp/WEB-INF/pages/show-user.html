@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>User</h1>
+<p th:text="${'Name:    ' + user.getFirstName()}">VALUE</p>
+
+<p th:text="${'Last Name:    ' + user.getLastName()}">VALUE</p>
+
+<p th:text="${'Age:    ' + user.getAge()}">VALUE</p>
+
+<p th:text="${'Email:    ' + user.getEmail()}">VALUE</p>
+
+<p></p>
+
+<input type="button" value="Update User" th:onclick="'window.location.href=\'/CRUD_war_exploded/' + ${user.getId()} + '/update\''">
+
+<p></p>
+
+<form th:method="DELETE" th:action="@{'/' + ${user.getId()}}">
+    <input type="submit" value="Delete"/>
+</form>
+
+</body>
+</html>
